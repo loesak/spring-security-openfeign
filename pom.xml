@@ -114,4 +114,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/loesak/spring-security-openfeign</url>
+        </repository>
+    </distributionManagement>
 </project>
