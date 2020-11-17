@@ -114,17 +114,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>loesoft-releases</id>
-            <name>Loesoft Release Repository</name>
-            <url>https://nexus.loesoft.com/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>loesoft-snapshots</id>
-            <name>Loesoft Snapshot Repository</name>
-            <url>https://nexus.loesoft.com/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>
