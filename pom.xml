@@ -7,6 +7,22 @@
     <version>0.1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <name>spring-security-openfeign</name>
+    <description>OpenFeign support for Spring Security</description>
+    <url>https://github.com/loesak/spring-security-openfeign</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/loesak/spring-security-openfeign</url>
+    </scm>
+
     <properties>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,16 +86,40 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
     <distributionManagement>
         <repository>
-            <id>loesoft-releases</id>
-            <name>Loesoft Release Repository</name>
-            <url>https://nexus.loesoft.com/repository/maven-releases/</url>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/loesak/spring-security-openfeign</url>
         </repository>
-        <snapshotRepository>
-            <id>loesoft-snapshots</id>
-            <name>Loesoft Snapshot Repository</name>
-            <url>https://nexus.loesoft.com/repository/maven-snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 </project>
