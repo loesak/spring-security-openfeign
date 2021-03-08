@@ -21,7 +21,7 @@ jobs:
           server-password: OSSRH_PASSWORD
           gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
           gpg-passphrase: OSSRH_GPG_SECRET_KEY_PASSWORD
-      - run: echo ~/.m2/settings-security.xml
+      - run: cat ~/.m2/settings-security.xml
       - run: mvn -B -ntp versions:set -DnewVersion=$(./version.sh)
       - run: mvn -B -ntp clean deploy
         env:
