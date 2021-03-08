@@ -4,7 +4,7 @@
 
     <groupId>org.loesak.springframework.security.openfeign</groupId>
     <artifactId>spring-security-openfeign</artifactId>
-    <version>0.1.2</version>
+    <version>NONE</version>
     <packaging>jar</packaging>
 
     <name>spring-security-openfeign</name>
@@ -19,7 +19,18 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <name>Aaron Loes</name>
+            <email>aaron.loes@gmail.com</email>
+            <organization>Loesak</organization>
+            <organizationUrl>https://github.com/loesak/esque</organizationUrl>
+        </developer>
+    </developers>
+
     <scm>
+        <connection>scm:git:git://github.com/loesak/spring-security-openfeign.git</connection>
+        <developerConnection>scm:git:ssh://github.com:loesak/spring-security-openfeign.git</developerConnection>
         <url>https://github.com/loesak/spring-security-openfeign</url>
     </scm>
 
@@ -112,14 +123,37 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <configuration>
+                    <gpgArguments>
+                        <arg>--pinentry-mode</arg>
+                        <arg>loopback</arg>
+                    </gpgArguments>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/loesak/spring-security-openfeign</url>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 </project>
