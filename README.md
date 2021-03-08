@@ -17,6 +17,16 @@ For those of us that rely on this capability, and that do not want to rewrite a 
 
 * Failure scenarios are probably not handled properly
 
+# Install
+Add the following to your maven dependencies. Make sure to check the releases or Maven Central for the latest version.
+```xml
+<dependency>
+  <groupId>org.loesak.springframework.security.openfeign</groupId>
+  <artifactId>spring-security-openfeign</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+
 # TODO:
 
 * Add support for OAuth Passthrough (a.k.a. Bearer Token Propagation).
