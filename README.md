@@ -23,7 +23,7 @@ Add the following to your maven dependencies. Make sure to check the releases or
 <dependency>
   <groupId>org.loesak.springframework.security.openfeign</groupId>
   <artifactId>spring-security-openfeign</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 
