@@ -40,7 +40,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <spring.security.version>5.3.5.RELEASE</spring.security.version>
+        <spring.security.version>5.3.10.RELEASE</spring.security.version>
         <spring.cloud.openfeign.version>2.2.5.RELEASE</spring.cloud.openfeign.version>
         <openfeign.version>10.10.1</openfeign.version>
     </properties>
