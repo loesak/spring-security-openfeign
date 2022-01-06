@@ -40,30 +40,43 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <spring.security.version>5.3.5.RELEASE</spring.security.version>
-        <spring.cloud.openfeign.version>2.2.5.RELEASE</spring.cloud.openfeign.version>
-        <openfeign.version>10.10.1</openfeign.version>
+        <spring-boot-dependencies.version>2.6.2</spring-boot-dependencies.version>
+        <spring-cloud-dependencies.version>2021.0.0</spring-cloud-dependencies.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-client</artifactId>
-            <version>${spring.security.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-openfeign-core</artifactId>
-            <version>${spring.cloud.openfeign.version}</version>
         </dependency>
-
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-core</artifactId>
-            <version>${openfeign.version}</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
@@ -92,6 +105,14 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <links>
+                        <!-- It would be better to link to the exact versions of these APIs, but I'm not sure of the
+                        best way to configure the version without making it harder to maintain. -->
+                        <link>https://docs.spring.io/spring-security/site/docs/current/api</link>
+                        <link>https://javadoc.io/static/io.github.openfeign/feign-core/latest</link>
+                    </links>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
