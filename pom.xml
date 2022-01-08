@@ -107,10 +107,8 @@
                 </executions>
                 <configuration>
                     <links>
-                        <!-- It would be better to link to the exact versions of these APIs, but I'm not sure of the
-                        best way to configure the version without making it harder to maintain. -->
-                        <link>https://docs.spring.io/spring-security/site/docs/current/api</link>
-                        <link>https://javadoc.io/static/io.github.openfeign/feign-core/latest</link>
+                        <link>https://docs.spring.io/spring-security/site/docs/5.6.1/api</link>
+                        <link>https://javadoc.io/doc/io.github.openfeign/feign-core/11.7</link>
                     </links>
                 </configuration>
             </plugin>
