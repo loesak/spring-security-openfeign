@@ -2,7 +2,6 @@ package org.loesak.springframework.security.openfeign.oauth2;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -13,7 +12,6 @@ import org.springframework.security.oauth2.core.OAuth2AccessToken;
 
 import java.util.Objects;
 
-@Slf4j
 public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
 
     private static final Authentication ANONYMOUS_AUTHENTICATION = new AnonymousAuthenticationToken(
